@@ -253,7 +253,7 @@ body.contact-page main {
 #signInModal .form-options { text-align: right; margin-top: -10px; margin-bottom: 10px; }
 #signInModal .forgot-password { color: #b0b0ff; font-size: 0.9em; text-decoration: none; }
 #signInModal .forgot-password:hover { color: #fff; text-decoration: underline; }
-.hidden-form { display: none; } /* Utility for switching forms */
+.hidden-form { display: none !important; } /* Utility for switching forms - Added !important */
 
 
 /* --- Choose Username Modal Specific --- */
@@ -273,7 +273,8 @@ body.contact-page main {
 
 /* --- Shared Modal Form Elements --- */
 .modal-form {
-    display: flex; flex-direction: column; gap: 18px;
+    /* display: flex; */ /* This might be causing the issue if overriding .hidden-form */
+    flex-direction: column; gap: 18px;
 }
 .modal-form h2 { /* General H2 if not overridden */
     text-align: center; color: #fff; font-size: 1.8em; margin-bottom: 5px; text-shadow: 0 0 8px #cc00ff;
