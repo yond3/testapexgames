@@ -1,0 +1,699 @@
+/* Basic Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Arial', sans-serif; /* Fallback font - Removed as redundant */
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    color: #fff;
+    background-color: #0a0a1a; /* Dark blue/purple background */
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh;
+}
+
+/* Background Image and Overlay */
+/* NOTE: You might want different background heights/images per page.
+   If so, you could define common styles here and page-specific ones
+   in <style> tags within each HTML or use specific body classes.
+   For now, using the index.html version as default. */
+.background-image {
+    position: fixed; /* Or absolute if preferred */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh; /* Default height from index.html */
+    /* IMPORTANT: Replace 'placeholder-background.jpg' with your actual image file */
+    background: url('placeholder-background.jpg') no-repeat center center/cover;
+    z-index: -2;
+    opacity: 0.6; /* Adjust opacity */
+}
+/* Example: If about/contact page needs full height background */
+body.full-height-bg .background-image {
+    height: 100vh;
+    /* Maybe specify a different background image too */
+    /* background-image: url('placeholder-about-background.jpg'); */
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 10, 26, 0.5), rgba(10, 10, 26, 1) 60%); /* Default gradient */
+    z-index: -1;
+}
+/* Example: Different gradient for about/contact */
+body.alt-gradient .overlay {
+    background: linear-gradient(to bottom, rgba(10, 10, 26, 0.6), rgba(10, 10, 26, 1) 70%);
+}
+
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e0e0ff; /* Light purple/white */
+    text-shadow: 0 0 5px #cc00ff, 0 0 10px #cc00ff; /* Neon glow */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #b0b0ff; /* Lighter text color */
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
+}
+
+nav ul li a.active, /* Keep active state for current page link */
+nav ul li a:hover {
+    color: #fff;
+    background-color: rgba(204, 0, 255, 0.3); /* Semi-transparent neon purple */
+    text-shadow: 0 0 8px #fff;
+}
+
+.sign-in-btn { /* Styling for the button itself */
+    padding: 10px 25px;
+    background-color: #8A2BE2; /* BlueViolet */
+    border: 1px solid #cc00ff;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 20px; /* Rounded corners */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px #cc00ff, inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.sign-in-btn:hover {
+    background-color: #9932CC; /* Darker Orchid */
+    box-shadow: 0 0 15px #cc00ff, inset 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Main Content Styling */
+main {
+    padding: 0 5%; /* Adjusted padding */
+    position: relative;
+    z-index: 5;
+    padding-bottom: 50px; /* Add padding to prevent overlap with potential footer */
+}
+
+/* Specific Main Padding for About/Contact */
+body.about-page main,
+body.contact-page main {
+    padding-top: 50px; /* Add more top padding like in original about.html */
+}
+body.contact-page main {
+    padding-top: 30px; /* Reset top padding for contact page */
+}
+
+
+/* Hero Section (index.html, signin.html) */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50vh; /* Adjust as needed */
+    margin-top: 20px;
+}
+
+.hero-text {
+    flex-basis: 50%;
+    max-width: 500px;
+}
+
+.title-box {
+    background-color: rgba(30, 30, 50, 0.7); /* Semi-transparent dark background */
+    border: 1px solid #8A2BE2; /* Neon border */
+    padding: 15px 30px;
+    margin-bottom: 15px;
+    display: inline-block; /* Make boxes wrap content */
+    width: 70%; /* Adjust width */
+    font-size: 3.5em; /* Large font size */
+    font-weight: bold;
+    color: #f0f0ff;
+    text-shadow: 0 0 8px #cc00ff;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); /* Angled edge */
+}
+
+.hero-text p {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #c0c0f0; /* Lighter text color */
+    max-width: 450px; /* Limit width */
+}
+
+.play-now-btn {
+    padding: 15px 35px;
+    background-color: #cc00ff; /* Bright Neon Purple */
+    border: 1px solid #e0e0ff;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #cc00ff, inset 0 0 8px rgba(255, 255, 255, 0.4);
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%); /* Angled edges */
+}
+
+.play-now-btn:hover {
+    background-color: #e600ff; /* Brighter purple */
+    box-shadow: 0 0 20px #e600ff, inset 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.hero-image {
+    flex-basis: 45%;
+    text-align: center; /* Center the image if needed */
+}
+
+.hero-image img {
+    max-width: 80%; /* Adjust size as needed */
+    height: auto;
+    opacity: 0.9; /* Slight transparency */
+    /* Add filter for effects if desired: filter: brightness(0.9) contrast(1.1); */
+}
+
+/* Card Section Styling (index.html, signin.html) */
+.card-section {
+    display: flex;
+    justify-content: space-around; /* Or space-between */
+    margin-top: 50px;
+    padding-bottom: 50px;
+    gap: 20px; /* Space between cards */
+}
+
+.card {
+    background-color: rgba(40, 40, 60, 0.6); /* Semi-transparent card background */
+    border: 1px solid #8A2BE2; /* Neon border */
+    border-radius: 8px;
+    overflow: hidden; /* Ensure image stays within borders */
+    flex-basis: 30%; /* Adjust based on number of cards */
+    max-width: 200px; /* Max width for cards */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 0 15px #cc00ff;
+}
+
+/* About Page Specific Styles */
+.about-content {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    gap: 40px; /* Space between image and text */
+    background-color: rgba(15, 15, 30, 0.4); /* Optional: Slight background tint for content area */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.about-image-container {
+    flex-basis: 35%; /* Adjust width of image column */
+    max-width: 300px; /* Max width for the image box */
+    padding: 15px; /* Padding inside the border */
+    border: 2px solid #8A2BE2; /* Neon purple border */
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3); /* Darker inner background */
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.7); /* Neon glow effect */
+}
+
+.about-image-container img {
+    display: block; /* Remove extra space below image */
+    width: 100%; /* Make image fill container */
+    height: auto;
+    border-radius: 4px; /* Slight rounding if needed */
+}
+
+.about-text-container {
+    flex-basis: 65%; /* Adjust width of text column */
+}
+
+.about-text-container p {
+    font-size: 1.1em; /* Adjust font size */
+    line-height: 1.7;
+    color: #d0d0f0; /* Slightly brighter text color */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Subtle text shadow for readability */
+}
+
+/* Contact Page Specific Styles */
+.contact-page .main-heading { /* Target heading only on contact page */
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 40px;
+    color: #f0f0ff;
+    text-shadow: 0 0 10px #cc00ff;
+}
+
+.contact-content {
+    background-color: rgba(15, 15, 30, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.contact-details {
+    max-width: 500px; /* Set a max-width for the block */
+    margin: 0 auto;  /* Center the block horizontally */
+}
+
+.contact-details h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #f0f0ff;
+    text-shadow: 0 0 8px #cc00ff;
+    text-align: center; /* Center heading */
+}
+.contact-details p {
+    line-height: 1.6;
+    color: #c0c0f0;
+    margin-bottom: 30px;
+    text-align: center; /* Center paragraph */
+}
+.contact-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    justify-content: center; /* Center items slightly */
+}
+.contact-method i {
+    font-size: 1.8em;
+    color: #8A2BE2;
+    width: 30px;
+    text-align: center;
+}
+.contact-method div {
+    display: flex;
+    flex-direction: column;
+}
+.contact-method span {
+    font-weight: bold;
+    color: #e0e0ff;
+    font-size: 1.1em;
+}
+.contact-method a, .contact-method .detail {
+    color: #b0b0ff;
+    text-decoration: none;
+    font-size: 0.95em;
+    word-break: break-all;
+}
+.contact-method a:hover {
+    color: #cc00ff;
+}
+
+
+/* --- Start of Modal CSS --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 10, 0.8); /* Darker semi-transparent overlay */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Optional: blur background */
+}
+
+.modal-content {
+    background: #101025; /* Dark background matching theme */
+    /* background: linear-gradient(to bottom right, #1a1a3a, #0a0a1a); */
+    padding: 30px 40px;
+    border-radius: 15px;
+    position: relative;
+    width: 90%;
+    max-width: 420px; /* Adjust width */
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.6); /* Neon glow */
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    color: #e0e0ff;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2.2em;
+    color: #a0a0c0;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+.close-modal:hover {
+    color: #fff;
+}
+
+/* Modal Tabs */
+.modal-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.tab-btn {
+    flex-grow: 1;
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    color: #a0a0c0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.tab-btn:hover {
+    color: #fff;
+}
+
+.tab-btn.active-tab {
+    color: #fff;
+    border-bottom-color: #cc00ff; /* Highlight color */
+}
+
+/* Modal Forms General */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Spacing between form elements */
+}
+.modal-form h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    text-shadow: 0 0 8px #cc00ff;
+}
+.modal-form .subheading {
+    text-align: center;
+    color: #b0b0ff;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.input-wrapper {
+    position: relative;
+    /* Make space for error message */
+    margin-bottom: 5px; /* Adjust as needed if gap isn't enough */
+}
+
+.input-wrapper i { /* Icon styling */
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    /* Adjust top position slightly because of error message space potentially added below */
+    transform: translateY(-60%); /* Fine-tune vertical alignment */
+    color: #8A2BE2; /* Icon color */
+    font-size: 1.1em;
+    z-index: 1; /* Ensure icon is clickable over input padding */
+}
+
+.input-wrapper input[type="text"],
+.input-wrapper input[type="email"],
+.input-wrapper input[type="password"] {
+    width: 100%;
+    padding: 14px 15px 14px 50px; /* Padding: top/bottom right left icon-space */
+    background-color: rgba(10, 10, 20, 0.7); /* Dark input background */
+    border: 1px solid #8A2BE2; /* Neon border */
+    border-radius: 30px; /* Fully rounded */
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-wrapper input[type="text"]:focus,
+.input-wrapper input[type="email"]:focus,
+.input-wrapper input[type="password"]:focus {
+    outline: none;
+    border-color: #cc00ff;
+    box-shadow: 0 0 10px rgba(204, 0, 255, 0.5);
+}
+
+.toggle-password { /* Eye icon for password toggle */
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    /* Adjust top position slightly */
+    transform: translateY(-60%); /* Fine-tune vertical alignment */
+    color: #8A2BE2;
+    cursor: pointer;
+    z-index: 1; /* Ensure icon is clickable */
+}
+.toggle-password i { /* Style the icon within the span */
+     position: static; /* Reset icon position from .input-wrapper i */
+     transform: none;
+     font-size: inherit; /* Inherit size */
+     color: inherit; /* Inherit color */
+     z-index: auto;
+}
+
+.toggle-password:hover {
+    color: #cc00ff;
+}
+
+.form-options { /* Container for forgot password link */
+    text-align: right;
+    margin-top: -10px; /* Adjust spacing */
+    margin-bottom: 10px;
+}
+
+.forgot-password {
+    color: #b0b0ff;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+.forgot-password:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.form-buttons { /* Container for primary/secondary buttons */
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.form-buttons .primary-btn,
+.form-buttons .secondary-btn {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px; /* Fully rounded */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.form-buttons .primary-btn { /* e.g., Sign Up / Login button */
+    background-color: #fff; /* White background for primary */
+    color: #1a1a3a; /* Dark text */
+    border: 1px solid #fff;
+}
+.form-buttons .primary-btn:hover {
+    background-color: #cc00ff;
+    color: #fff;
+    border-color: #cc00ff;
+    box-shadow: 0 0 10px #cc00ff;
+}
+
+.form-buttons .secondary-btn { /* e.g., Login / Sign Up switch button */
+    background-color: transparent; /* Transparent background */
+    color: #fff; /* White text */
+    border: 1px solid #8A2BE2; /* Neon border */
+}
+.form-buttons .secondary-btn:hover {
+    background-color: rgba(138, 43, 226, 0.2); /* Slight neon bg on hover */
+    border-color: #cc00ff;
+    color: #fff;
+}
+
+/* Utility class to hide forms */
+.hidden-form {
+    display: none;
+}
+/* --- End of Modal CSS --- */
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) { /* Medium devices (tablets, less than 992px) */
+    .contact-details {
+        max-width: 90%; /* Allow slightly wider on medium screens */
+    }
+}
+
+@media (max-width: 768px) { /* Small devices (landscape phones, 768px and down) */
+    header {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+        padding-left: 0; /* Remove potential padding */
+    }
+    nav ul li {
+        margin: 0 10px; /* Adjust spacing */
+    }
+    header .sign-in-btn { /* Target button directly */
+         margin-top: 15px; /* Increased space */
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 30px;
+        display: flex; /* Center align items like buttons */
+        flex-direction: column;
+        align-items: center;
+    }
+     .title-box {
+        width: 90%; /* Adjust for smaller screens */
+        font-size: 2.5em;
+        clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%); /* Adjust clip path slightly */
+    }
+     .hero-text p {
+        max-width: 90%; /* Allow text to use more width */
+     }
+    .hero-image {
+        margin-top: 30px;
+    }
+    .card-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        margin-bottom: 20px;
+        max-width: 250px; /* Allow cards to be a bit wider */
+    }
+
+    /* About page responsive */
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+        padding: 20px;
+        text-align: center; /* Center content */
+    }
+    .about-image-container {
+        max-width: 250px; /* Adjust max width for smaller screens */
+        margin-bottom: 30px; /* Add space below image */
+        margin-left: auto; /* Center */
+        margin-right: auto; /* Center */
+    }
+     .about-text-container {
+         flex-basis: 100%; /* Text takes full width */
+         text-align: center; /* Center text */
+     }
+     .about-text-container p {
+         font-size: 1em; /* Adjust font size */
+     }
+
+     /* Contact page responsive */
+     .contact-page .main-heading { font-size: 2.5em; }
+     .contact-content { padding: 30px 20px; } /* Adjust padding */
+
+
+    /* Modal adjustments */
+    .modal-content {
+        padding: 25px 20px;
+        max-width: 90%;
+    }
+    .modal-form {
+        gap: 15px; /* Slightly reduce gap */
+    }
+    .modal-form h2 {
+        font-size: 1.6em;
+    }
+    .tab-btn {
+        font-size: 1em;
+    }
+     .form-buttons {
+         flex-direction: column; /* Stack buttons */
+    }
+     .input-wrapper {
+        margin-bottom: 3px; /* Adjust spacing */
+     }
+     .input-wrapper i { /* Adjust icon position slightly */
+        left: 15px;
+        /* transform: translateY(-50%); */ /* Readjust vertical centering if needed */
+     }
+     .input-wrapper input[type="text"],
+     .input-wrapper input[type="email"],
+     .input-wrapper input[type="password"] {
+         padding-left: 45px; /* Adjust padding for icon */
+     }
+     .toggle-password {
+         right: 15px; /* Adjust eye icon position */
+         /* transform: translateY(-50%); */ /* Readjust vertical centering if needed */
+     }
+}
+/* --- End of Responsive Adjustments --- */
+
+/* --- Validation Styles --- */
+.error-message {
+    color: #ff6b6b; /* A lighter red for dark background */
+    font-size: 0.85em;
+    display: block; /* Make it appear on its own line */
+    margin-top: 4px;
+    margin-left: 15px; /* Indent slightly */
+    /* Set a fixed height to prevent layout shifts when message appears/disappears */
+    min-height: 1.2em;
+    visibility: hidden; /* Hide initially */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.error-message.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.input-wrapper input.invalid {
+    border-color: #ff6b6b !important; /* Use important if needed to override focus style */
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.5); /* Optional: Add red glow */
+}
+
+/* Optional: Adjust icon color when input is invalid */
+.input-wrapper input.invalid + .toggle-password i, /* If toggle is direct sibling */
+.input-wrapper input.invalid ~ i { /* If icon is sibling but not direct */
+     color: #ff6b6b;
+}
+/* --- End Validation Styles --- */
