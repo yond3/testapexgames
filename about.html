@@ -6,25 +6,25 @@
     <title>About Us - APEX Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="about-page full-height-bg alt-gradient"> 
-    <div class="background-image"></div> 
-    <div class="overlay"></div> 
-    
+<body class="about-page full-height-bg alt-gradient">
+    <div class="background-image"></div>
+    <div class="overlay"></div>
+
     <header>
         <div class="logo">APEX Games</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Us</a></li> 
+                <li><a href="about.html" class="active">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
         <button id="signInBtn" class="sign-in-btn">Sign In</button>
     </header>
 
-    <main> 
+    <main>
         <section class="about-content">
             <div class="about-image-container">
                 <img src="placeholder-about-logo.png" alt="Apex Games Logo">
@@ -46,63 +46,41 @@
             </div>
              <span id="genericAuthError" class="error-message" style="text-align: center; margin-bottom: 10px;"></span>
 
-            <form id="signupForm" class="modal-form" action="#" method="post" novalidate> 
+            <form id="signupForm" class="modal-form" action="#" method="post" novalidate>
                 <h2>WELCOME!</h2>
                 <p class="subheading">Create your account</p>
-                <div class="input-wrapper">
-                    <i class="fas fa-user"></i>
-                    <input type="text" name="signup_username" id="signupUsername" placeholder="Username" required autocomplete="username">
-                    <span class="error-message" id="signupUsernameError"></span>
-                </div>
-                <div class="input-wrapper">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" name="signup_email" id="signupEmail" placeholder="Email" required autocomplete="email">
-                    <span class="error-message" id="signupEmailError"></span>
-                </div>
-                <div class="input-wrapper">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="signup_password" id="signupPassword" placeholder="Password" required autocomplete="new-password">
-                    <span class="toggle-password"><i class="fas fa-eye"></i></span>
-                    <span class="error-message" id="signupPasswordError"></span>
-                </div>
-                <div class="input-wrapper">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="signup_password_repeat" id="signupPasswordRepeat" placeholder="Repeat Password" required autocomplete="new-password">
-                    <span class="toggle-password"><i class="fas fa-eye"></i></span>
-                    <span class="error-message" id="signupPasswordRepeatError"></span>
-                </div>
-                <div class="form-buttons">
-                    <button type="button" class="secondary-btn login-switch-btn">Login</button>
-                    <button type="submit" class="primary-btn">Sign Up</button>
-                </div>
+                <div class="input-wrapper"> <i class="fas fa-user"></i> <input type="text" name="signup_username" id="signupUsername" placeholder="Username" required autocomplete="username"> <span class="error-message" id="signupUsernameError"></span> </div>
+                <div class="input-wrapper"> <i class="fas fa-envelope"></i> <input type="email" name="signup_email" id="signupEmail" placeholder="Email" required autocomplete="email"> <span class="error-message" id="signupEmailError"></span> </div>
+                <div class="input-wrapper"> <i class="fas fa-lock"></i> <input type="password" name="signup_password" id="signupPassword" placeholder="Password" required autocomplete="new-password"> <span class="toggle-password"><i class="fas fa-eye"></i></span> <span class="error-message" id="signupPasswordError"></span> </div>
+                <div class="input-wrapper"> <i class="fas fa-lock"></i> <input type="password" name="signup_password_repeat" id="signupPasswordRepeat" placeholder="Repeat Password" required autocomplete="new-password"> <span class="toggle-password"><i class="fas fa-eye"></i></span> <span class="error-message" id="signupPasswordRepeatError"></span> </div>
+                <div class="form-buttons"> <button type="button" class="secondary-btn login-switch-btn">Login</button> <button type="submit" class="primary-btn">Sign Up</button> </div>
             </form>
 
-            <form id="loginForm" class="modal-form hidden-form" action="#" method="post" novalidate> 
+            <form id="loginForm" class="modal-form hidden-form" action="#" method="post" novalidate>
                 <h2>WELCOME BACK!</h2>
                 <p class="subheading">Sign in to your account</p>
-                <div class="input-wrapper">
-                    <i class="fas fa-user"></i>
-                    <input type="text" name="login_identifier" id="loginIdentifier" placeholder="Username or Email" required autocomplete="username">
-                     <span class="error-message" id="loginIdentifierError"></span>
-                </div>
-                <div class="input-wrapper">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="login_password" id="loginPassword" placeholder="Password" required autocomplete="current-password">
-                    <span class="toggle-password"><i class="fas fa-eye"></i></span>
-                    <span class="error-message" id="loginPasswordError"></span>
-                </div>
-                <div class="form-options">
-                    <a href="#" class="forgot-password">Forgot Password?</a>
-                </div>
-                <div class="form-buttons">
-                    <button type="button" class="secondary-btn signup-switch-btn">Sign Up</button>
-                    <button type="submit" class="primary-btn">Login</button>
-                </div>
+                <div class="input-wrapper"> <i class="fas fa-user"></i> <input type="text" name="login_identifier" id="loginIdentifier" placeholder="Username or Email" required autocomplete="username"> <span class="error-message" id="loginIdentifierError"></span> </div>
+                <div class="input-wrapper"> <i class="fas fa-lock"></i> <input type="password" name="login_password" id="loginPassword" placeholder="Password" required autocomplete="current-password"> <span class="toggle-password"><i class="fas fa-eye"></i></span> <span class="error-message" id="loginPasswordError"></span> </div>
+                <div class="form-options"> <a href="#" class="forgot-password">Forgot Password?</a> </div>
+                <div class="form-buttons"> <button type="button" class="secondary-btn signup-switch-btn">Sign Up</button> <button type="submit" class="primary-btn">Login</button> </div>
             </form>
         </div>
     </div>
-
-    <script type="module" src="script.js"></script> 
+    <div id="chooseUsernameModal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 400px;">
+             <h2 style="text-align: center; color: #fff; font-size: 1.8em; margin-bottom: 20px; text-shadow: 0 0 8px #cc00ff;">Choose your username</h2>
+             <span id="genericUsernameError" class="error-message" style="text-align: center; margin-bottom: 10px;"></span>
+             <div class="input-wrapper" style="margin-bottom: 10px;">
+                 <i class="fas fa-user-astronaut" style="transform: translateY(-50%);"></i>
+                 <input type="text" name="choose_username" id="chooseUsernameInput" placeholder="Username" required autocomplete="username" style="padding-left: 50px;">
+                 <span class="error-message" id="chooseUsernameError"></span>
+             </div>
+             <div class="form-buttons" style="margin-top: 20px;">
+                  <button id="saveUsernameBtn" type="button" class="primary-btn" style="width: 100%;">Save Username</button>
+             </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
 
 </body>
 </html>
