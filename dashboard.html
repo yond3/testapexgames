@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - APEX Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
+    <header class="dashboard-header">
+        <div class="logo">APEX Games</div>
+        <div class="header-center">
+            <i class="fas fa-th-large header-icon"></i> <span>DASHBOARD</span>
+        </div>
+        <div class="header-right">
+             <i class="fas fa-sync-alt header-icon header-icon-action"></i> <i class="fas fa-gamepad header-icon header-icon-action"></i> <i class="fas fa-times header-icon header-icon-action" id="logoutBtn"></i> <div class="header-user-info">
+                <i class="fas fa-user-circle header-icon"></i>
+                <span id="headerUsername">USERNAME</span> <span>:</span>
+                <span id="headerUserValue">8</span> </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="dashboard-grid">
+            <div class="left-column">
+                <section class="card user-info-card">
+                    <div class="user-avatar">
+                        <img src="placeholder-avatar.png" alt="User Avatar"> </div>
+                    <div class="user-details">
+                        <h3 id="cardUsername">USERNAME</h3> <p>Acc ID: <span id="accId">#######</span></p>
+                        <p>Match: <span id="matchInfo">N/A</span></p>
+                        <p>Coin: <span id="coinInfo">N/A</span></p>
+                        <p>Lost: <span id="lostInfo">N/A</span></p>
+                        <p>Coinstreak: <span id="coinstreakInfo">N/A</span></p>
+                    </div>
+                </section>
+
+                <section class="card leaderboard-card">
+                    <h4>Leaderboards</h4>
+                    <div class="leaderboard-tabs">
+                        <button class="tab-btn active">Previous Game</button> <button class="tab-btn">Coins</button>
+                    </div>
+                    <div class="leaderboard-table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Player</th>
+                                    <th>Coins</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>USERNAME</td>
+                                    <td><i class="fas fa-coins"></i> 8888</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>USERNAME</td>
+                                    <td><i class="fas fa-coins"></i> 8888</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>USERNAME</td>
+                                    <td><i class="fas fa-coins"></i> 8888</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>USERNAME</td>
+                                    <td><i class="fas fa-coins"></i> 8888</td>
+                                </tr>
+                                 <tr>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                </tr>
+                                 <tr>
+                                    <td>10</td>
+                                    <td>USERNAME</td>
+                                    <td><i class="fas fa-coins"></i> 8888</td>
+                                </tr>
+                                </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-column">
+                <section class="card game-card">
+                     <img src="placeholder-game-art.png" alt="Bug Hunter Game Art"> <div class="game-card-content">
+                        <h3>BUG HUNTER</h3>
+                        <p>Debug, Fix, Conquer! Hunt Bugs Before They Hunt You!</p>
+                        <button class="play-now-btn">PLAY NOW!!</button> </div>
+                </section>
+
+                <section class="card coming-soon-card">
+                     <h2>? COMING SOON!</h2>
+                 </section>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="script.js"></script>
+    </body>
+</html>
